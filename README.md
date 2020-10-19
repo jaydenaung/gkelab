@@ -4,7 +4,7 @@ Here is a couple of scripts that automate creating of Kubernetes cluster (GKE) o
  1. [gke_setup.sh](#gke_setup.sh) 
  2. [cleanup_cluster.sh](#cleanup_cluster.sh)
 
-## gke_setup.sh
+### gke_setup.sh
 
 This is the script that builds GKE cluster. The script will create deployments, and services as well.
 
@@ -57,7 +57,7 @@ Your load balancer IP is 1.2.3.4
 
  ```
 
-## cleanup_cluster.sh
+### cleanup_cluster.sh
 
 This is the script that deletes and cleans up GKE clusters. The script will delete deployments, and services before deleting the cluster itself.
 
