@@ -4,19 +4,19 @@
 PROJECT_ID="helloworld041019"
 
 #UPDATE THIS
-IMAGE="gcr.io/$PROJECT_ID/cyberave-io:v1"
+IMAGE="gcr.io/$PROJECT_ID/demo-app:v1"
 
 read -p "Enter Your Cluster Name: " clustername
-clustername=${clustername:-chkp}
+clustername=${clustername:-my-cluster}
 
-read -p "Enter App Name (e.g. cyberave-io): " app
-app=${app:-cyberave-io}
+read -p "Enter App Name (e.g. demo-app): " app
+app=${app:-demo-app}
 
 read -p "Enter GCP Region (e.g. asia-southeast1): " region
 region=${region:-asia-southeast1}
 
 read -p "Enter Your Service Name (e.g. my-service): " service1
-service1=${service1:-cyberave-svc}
+service1=${service1:-demo-svc}
 
 echo "Creating Cluster on GCP in $zone"
 gcloud container clusters create $clustername --region $region --node-locations $region-a,$region-b
