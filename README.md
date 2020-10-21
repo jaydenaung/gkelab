@@ -83,8 +83,10 @@ This is the script that deletes and cleans up GKE clusters. The script will basi
 Execute the script:
 
 ```bash
-./cleanup_cluster.sh
+echo "Y" | ./cleanup_cluster.sh
 ```
+
+Note: Add ```echo "Y" |``` before the script to auto-answer Yes to a prompt.
 
 ### Sample Output
 
