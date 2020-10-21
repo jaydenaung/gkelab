@@ -51,9 +51,9 @@ WARNING: Newly created clusters and node-pools will have node auto-upgrade enabl
 WARNING: Starting with version 1.18, clusters will have shielded GKE nodes by default.
 WARNING: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s). 
 Creating cluster chkp in asia-southeast1... Cluster is being health-checked (master is healthy)...done.                                                     
-Created [https://container.googleapis.com/v1/projects/helloworld041019/zones/asia-southeast1/clusters/chkp].
-To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/asia-southeast1/chkp?project=helloworld041019
-kubeconfig entry generated for chkp.
+Created [https://container.googleapis.com/v1/projects/helloworld041019/zones/asia-southeast1/clusters/my-cluster]..
+To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/asia-southeast1/my-cluster?project=helloworldxxxx
+kubeconfig entry generated for my-cluster.
 NAME  LOCATION         MASTER_VERSION   MASTER_IP      MACHINE_TYPE   NODE_VERSION     NUM_NODES  STATUS
 my-cluster  asia-southeast1  1.16.13-gke.401  1.2.3.4  n1-standard-1  1.16.13-gke.401  6          RUNNING
 my-cluster has been created.
