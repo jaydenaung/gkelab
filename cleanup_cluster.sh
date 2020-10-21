@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# ****************************************************
+# A simple script to clean up GKE Cluster  
+# Author: Jayden Kyaw Htet Aung 
+# See LICENSE and README files
+# ****************************************************
+
 echo "Now we are gonna do a clean up!"
 
 export svc=$(kubectl get services | awk 'NR ==2 {print $1;exist}')

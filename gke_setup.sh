@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# ****************************************************
+# A simple script to set up a GKE Cluster in 5 minutes 
+# Author: Jayden Kyaw Htet Aung 
+# See LICENSE and README files
+# ****************************************************
+
 #UPDATE THIS
 PROJECT_ID="helloworld041019"
 
@@ -34,7 +40,7 @@ kubectl autoscale deployment $app --cpu-percent=80 --min=1 --max=5
 echo "Exposing your app via a load balancer.."
 kubectl expose deployment $app --name=$service1 --type=LoadBalancer --port 80 --target-port 80
 
-echo "Your Kubernetes cluster has been created!"
+echo "Your Kubernetes cluster has been created on `date`!"
 sleep 60
 
 export lb_ip=$(kubectl get services | awk 'NR ==2 {print $4;exist}')

@@ -55,17 +55,17 @@ Created [https://container.googleapis.com/v1/projects/helloworld041019/zones/asi
 To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/asia-southeast1/chkp?project=helloworld041019
 kubeconfig entry generated for chkp.
 NAME  LOCATION         MASTER_VERSION   MASTER_IP      MACHINE_TYPE   NODE_VERSION     NUM_NODES  STATUS
-chkp  asia-southeast1  1.16.13-gke.401  1.2.3.4  n1-standard-1  1.16.13-gke.401  6          RUNNING
-chkp has been created.
+my-cluster  asia-southeast1  1.16.13-gke.401  1.2.3.4  n1-standard-1  1.16.13-gke.401  6          RUNNING
+my-cluster has been created.
 Creating deployment..
-deployment.apps/cyberave-io created
+deployment.apps/demo-app created
 Scaling deployment to 3 replicas..
-deployment.apps/cyberave-io scaled
+deployment.apps/demo-app scaled
 Configuring autoscaling for the deployment..
-horizontalpodautoscaler.autoscaling/cyberave-io autoscaled
+horizontalpodautoscaler.autoscaling/demo-app autoscaled
 Exposing your app via a load balancer..
-service/cyberave-svc exposed
-Your Kubernetes cluster has been created!
+service/demo-svc exposed
+Your Kubernetes cluster has been created on Wed Oct 21 19:08:39 +08 2020!
 Your load balancer IP is 1.2.3.4
 
  ```
