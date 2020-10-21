@@ -6,16 +6,16 @@ PROJECT_ID="helloworld041019"
 #UPDATE THIS
 IMAGE="gcr.io/$PROJECT_ID/demo-app:v1"
 
-read -p "Enter Your Cluster Name: " clustername
+read -p "Enter Your Cluster Name (Default: my-cluster): " clustername
 clustername=${clustername:-my-cluster}
 
-read -p "Enter App Name (e.g. demo-app): " app
+read -p "Enter App Name (Default: demo-app): " app
 app=${app:-demo-app}
 
-read -p "Enter GCP Region (e.g. asia-southeast1): " region
+read -p "Enter GCP Region (Default: asia-southeast1): " region
 region=${region:-asia-southeast1}
 
-read -p "Enter Your Service Name (e.g. my-service): " service1
+read -p "Enter Your Service Name (Default: my-service): " service1
 service1=${service1:-demo-svc}
 
 echo "Creating Cluster on GCP in $zone"

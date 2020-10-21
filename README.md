@@ -1,23 +1,36 @@
-# Set up GKE Cluster in 15 minutes
-Here is a couple of scripts that automate creating of Kubernetes cluster (GKE) on Google Cloud Platform. You will need to have an account on Google Cloud Platform and should have created a project. 
+# Set up GKE Cluster in less than 10 minutes 
+Here is a couple of scripts that automate deploying Kubernetes cluster (GKE) on Google Cloud Platform. You could use automation tools like Terraform to do this but this is just another way of automating same thing. Maybe you want to do a very simple demo and build a cluster in less than 10 minutes, these scripts are for you. Basically, one script to create a cluster with a demo app, and another script to clean up.
+
+You will need to have an account on Google Cloud Platform and should have created a project. 
 
  1. [gke_setup.sh](#gke_setup.sh) 
  2. [cleanup_cluster.sh](#cleanup_cluster.sh)
 
 ### gke_setup.sh
 
-This is the script that builds GKE cluster. The script will create deployments, and services as well.
+This is the script that builds GKE cluster. The script will create the following:
 
-Before executing the script, please update the following values:
+1. A GKE cluster
+2. A Deployment
+3. A service (Load balancer)
+
+Before executing the script, please update the following values in the script:
 
  ``` bash
  #UPDATE THIS with your GCP Project Name
 PROJECT_ID="YOUR_PROJECT_NAME"
 
- #UPDATE THIS with Docker image
+ #UPDATE THIS with the location of Docker Image of your choice
 IMAGE="gcr.io/$PROJECT_ID/your-docker-image:v1"
  ```
- And basically execute the script:
+
+ And basically execute the script, and provide the following when the script prompts:
+
+ - Your Cluster name (Default is my-cluster)
+ - App Name (Default is demo-app)
+ - GCP Region (Default is asia-southeast1)
+ - Your Kubernetes service name (Default is my-service)
+
 
  ```bash
  ./gke_setup.sh
@@ -27,10 +40,10 @@ IMAGE="gcr.io/$PROJECT_ID/your-docker-image:v1"
 
  ```bash
 $ ./gke_setup.sh 
-Enter Your Cluster Name: 
-Enter App Name (e.g. cyberave-io): 
-Enter GCP Region (e.g. asia-southeast1): 
-Enter Your Service Name (e.g. my-service): 
+Enter Your Cluster Name (Default: my-cluster): 
+Enter App Name (Default: demo-app): 
+Enter GCP Region (Default: asia-southeast1): 
+Enter Your Service Name (Default: my-service): 
 Creating Cluster on GCP in 
 WARNING: Warning: basic authentication is deprecated, and will be removed in GKE control plane versions 1.19 and newer. For a list of recommended authentication methods, see: https://cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication
 WARNING: Currently VPC-native is not the default mode during cluster creation. In the future, this will become the default mode and can be disabled using `--no-enable-ip-alias` flag. Use `--[no-]enable-ip-alias` flag to suppress this warning.
@@ -56,10 +69,16 @@ Your Kubernetes cluster has been created!
 Your load balancer IP is 1.2.3.4
 
  ```
+Now you have a working cluster! Note down the ***Load Balancer's IP*** and access it on the browser. At this point, you should see the demo app.
 
+![header image](img/k8s-demo-app.png)
+
+If you want to do a simple security posture assessment, on your cluster [check this out](#How-about-a-security-posture-assessment?) before you run cleanup script to delete your cluster. 
+
+-----
 ### cleanup_cluster.sh
 
-This is the script that deletes and cleans up GKE clusters. The script will delete deployments, and services before deleting the cluster itself.
+This is the script that deletes and cleans up GKE clusters. The script will basically delete deployments, and services before deleting the cluster itself.
 
 Execute the script:
 
@@ -95,6 +114,12 @@ Deleted [https://container.googleapis.com/v1/projects/helloworld041019/zones/asi
 Clean-up has been completed..
 
 ```
+
+# How about a security posture assessment?
+
+Once you've deployed your cluster, I'd strongly recommend that you check out my article on [how to run a security posture assessment on your Kubernetes cluster using CloudGuard CSPM.](https://medium.com/@jaydenaung/securing-kubernetes-environments-with-check-point-cloudguard-cspm-ea23e69d5f7c)
+
+You can even automate onboarding of Kubernetes clusters to CloudGuard CSPM using [python and bash scripts that I've developed](https://github.com/jaydenaung/cloudguardk8s)
 
 Thanks.
 
