@@ -1,4 +1,4 @@
-# Set up GKE Cluster in less than 10 minutes 
+# Set up GKE Cluster in 5 minutes 
 Here is a couple of scripts that automate deploying Kubernetes cluster (GKE) on Google Cloud Platform. You could use automation tools like Terraform to do this but this is just another way of automating same thing. Maybe you want to do a very simple demo and build a cluster in less than 10 minutes, these scripts are for you. Basically, one script to create a cluster with a demo app, and another script to clean up.
 
 You will need to have an account on Google Cloud Platform and should have created a project. 
