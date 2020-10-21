@@ -122,7 +122,7 @@ Clean-up has been completed on Wed Oct 21 16:48:49 +08 2020..
 
 Once you've deployed your cluster, I'd strongly recommend that you check out my article on [how to run a security posture assessment on your Kubernetes cluster using CloudGuard CSPM.](https://medium.com/@jaydenaung/securing-kubernetes-environments-with-check-point-cloudguard-cspm-ea23e69d5f7c)
 
-You can even automate onboarding of Kubernetes clusters to CloudGuard CSPM using [python and bash scripts that I've developed](https://github.com/jaydenaung/cloudguardk8s)
+You can even automate onboarding of Kubernetes clusters to CloudGuard CSPM using [python and bash scripts that I've developed.](https://github.com/jaydenaung/cloudguardk8s)
 
 Thanks.
 
