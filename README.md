@@ -50,8 +50,8 @@ WARNING: Currently VPC-native is not the default mode during cluster creation. I
 WARNING: Newly created clusters and node-pools will have node auto-upgrade enabled by default. This can be disabled using the `--no-enable-autoupgrade` flag.
 WARNING: Starting with version 1.18, clusters will have shielded GKE nodes by default.
 WARNING: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s). 
-Creating cluster chkp in asia-southeast1... Cluster is being health-checked (master is healthy)...done.                                                     
-Created [https://container.googleapis.com/v1/projects/helloworld041019/zones/asia-southeast1/clusters/my-cluster]..
+Creating cluster my-cluster in asia-southeast1... Cluster is being health-checked (master is healthy)...done.                                                     
+Created [https://container.googleapis.com/v1/projects/helloworldxxxx/zones/asia-southeast1/clusters/my-cluster]..
 To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/asia-southeast1/my-cluster?project=helloworldxxxx
 kubeconfig entry generated for my-cluster.
 NAME  LOCATION         MASTER_VERSION   MASTER_IP      MACHINE_TYPE   NODE_VERSION     NUM_NODES  STATUS
