@@ -1,5 +1,5 @@
-# Set up GKE Cluster in 5 minutes 
-Here is a couple of scripts that automate deploying Kubernetes cluster (GKE) on Google Cloud Platform. You could use automation tools like Terraform to do this but this is just another way of automating same thing. Maybe you want to do a very simple demo and build a cluster in less than 10 minutes, these scripts are for you. Basically, one script to create a cluster with a demo app, and another script to clean up.
+# Deploy a GKE Cluster in 5 minutes 
+Here is a couple of scripts that automate deploying Kubernetes cluster (GKE) on Google Cloud Platform. You could use automation tools like Terraform to do this but this is just another way of automating the same thing. Whether you're doing a quick test or demo, you can use this very simple shell script to deploy a GKE cluster in 5 minutes, and clean it up in about 3 minutes. Basically, one script to create a cluster with a demo app, and another script to clean up.
 
 You will need to have an account on Google Cloud Platform and should have created a project. 
 
@@ -8,7 +8,7 @@ You will need to have an account on Google Cloud Platform and should have create
 
 ### gke_setup.sh
 
-This is the script that builds GKE cluster. The script will create the following:
+This is the script that builds a GKE cluster. The script will create the following:
 
 1. A GKE cluster
 2. A Deployment
@@ -93,27 +93,28 @@ Note: Add ```echo "Y" |``` before the script to auto-answer Yes to a prompt.
 > When it asks whether you want to ***Continue***, Enter "Y".
 
 ```bash
-$ ./cleanup_k8s.sh 
+ echo "Y" | ./cleanup_cluster.sh 
 Now we are gonna do a clean up!
-You have a service called cyberave-svc
-Now we are gonna delete cyberave-svc ..
-service "cyberave-svc" deleted
-cyberave-svc has been deleted..
-You have a deployment called cyberave-io ..
-Now we are gonna delete cyberave-io
-deployment.apps "cyberave-io" deleted
-cyberave-io has bee deleted..
+You have a service called demo-svc
+Now we are gonna delete demo-svc ..
+service "demo-svc" deleted
+demo-svc has been deleted..
+You have a deployment called demo-app ..
+Now we are gonna delete demo-app
+deployment.apps "demo-app" deleted
+demo-app has been deleted..
 Now we are gonna delete the GKE clusters..
-You have a GKE cluster called chkp..
-Now we are gonna delete chkp..
+You have a GKE cluster called my-cluster..
+Now we are gonna delete my-cluster..
 The following clusters will be deleted.
- - [chkp] in [asia-southeast1]
+ - [my-cluster] in [asia-southeast1]
 
 Do you want to continue (Y/n)?  y
 
-Deleting cluster chkp...done.                                                                                                                               
-Deleted [https://container.googleapis.com/v1/projects/helloworld041019/zones/asia-southeast1/clusters/chkp].
-Clean-up has been completed..
+Deleting cluster my-cluster...done.                                                                                           
+Deleted [https://container.googleapis.com/v1/projects/helloworldxxxx/zones/asia-southeast1/clusters/my-cluster].
+Clean-up has been completed on Wed Oct 21 16:48:49 +08 2020..
+
 
 ```
 
