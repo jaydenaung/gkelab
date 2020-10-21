@@ -3,8 +3,8 @@ Here is a couple of scripts that automate deploying Kubernetes cluster (GKE) on 
 
 You will need to have an account on Google Cloud Platform and should have created a project. 
 
- 1. [gke_setup.sh](#gke_setup.sh) 
- 2. [cleanup_cluster.sh](#cleanup_cluster.sh)
+ 1. [gke_setup.sh](https://github.com/jaydenaung/gkelab/blob/master/gke_setup.sh) 
+ 2. [cleanup_cluster.sh](https://github.com/jaydenaung/gkelab/blob/master/cleanup_cluster.sh)
 
 ### gke_setup.sh
 
