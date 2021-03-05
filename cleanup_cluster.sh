@@ -2,6 +2,7 @@
 # Author: Jayden Kyaw Htet Aung
 
 PROJECT_ID="helloworld041019"
+region=$(gcloud config get-value compute/region)
 
 #First we need to look for K8s services 
 command2=$(kubectl get services | awk 'NR ==2 {print $1;exist}')
@@ -16,7 +17,7 @@ then
 else 
     echo "Your have a k8s service called $service"
     echo "Deleting service: $service"
-    kubectl delete service $service
+    kubectl delete service $service 
     echo "$service has been deleted"
 fi
 
@@ -30,7 +31,7 @@ then
 else 
     echo "Your have a GKE cluster called $clustername"
     echo "Deleting GKE Cluster: $clustername"
-    gcloud container clusters delete $clustername
+    gcloud container clusters delete $clustername --region $region
     echo "$clustername has been deleted"
     echo ".............................."
     echo Deletion completed on `date`
