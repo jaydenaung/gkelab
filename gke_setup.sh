@@ -10,7 +10,7 @@
 PROJECT_ID="helloworld041019"
 
 #UPDATE THIS
-IMAGE="gcr.io/$PROJECT_ID/demo-app:v1"
+IMAGE="gcr.io/$PROJECT_ID/edinburgh:1.1"
 
 read -p "Enter Your Cluster Name (Default: my-cluster): " clustername
 clustername=${clustername:-my-cluster}
